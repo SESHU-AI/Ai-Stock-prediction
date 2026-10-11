@@ -17,7 +17,7 @@ function App() {
 
   const fetchStock = async (name) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/stock/details?symbol=${encodeURIComponent(name)}`);
+      const res = await fetch(`https://stock-price-prediction-2i9f.onrender.com/api/stock/details?symbol=${encodeURIComponent(name)}`);
       const data = await res.json();
       setSelectedStock(data);
     } catch (err) {
@@ -35,7 +35,7 @@ function App() {
     }
 
     try {
-      const res = await fetch(`http://localhost:5000/api/stock/search?q=${encodeURIComponent(val)}`);
+      const res = await fetch(`https://stock-price-prediction-2i9f.onrender.com/api/stock/search?q=${encodeURIComponent(val)}`);
       const data = await res.json();
       setSuggestions(data);
     } catch (err) {
@@ -54,7 +54,7 @@ function App() {
       <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: '#030806', color: '#00ff88' }}>
         <BrainCircuit size={48} className="animate-pulse" style={{ marginBottom: '16px' }} />
         <h2>Loading StockAI Terminal...</h2>
-        <p style={{ color: '#86efac', marginTop: '8px', fontSize: '0.9rem' }}>Connecting to Backend at http://localhost:5000</p>
+        <p style={{ color: '#86efac', marginTop: '8px', fontSize: '0.9rem' }}>Connecting to Backend at https://stock-price-prediction-2i9f.onrender.com/</p>
       </div>
     );
   }
